@@ -212,11 +212,11 @@ task npmBin{
 
 // Install development packages from package.json
 task node_setup(type: Exec) {
+   
     description = "Grab NodeJS dependencies (from package.json)"
     commandLine = ["npm", "install"]
     inputs.file "package.json"
     outputs.dir "node_modules"
-
     tasks.npmBin.execute()
 
 }
