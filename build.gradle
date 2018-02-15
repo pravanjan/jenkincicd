@@ -221,6 +221,7 @@ task node_setup(type: Exec) {
 
 }
 
-
+war {
+}
 
 test.finalizedBy jacocoTestReport
