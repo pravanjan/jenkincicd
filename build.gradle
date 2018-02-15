@@ -192,6 +192,9 @@ appengine {  // App Engine tasks configuration
   }
 }
 
+war{
+  
+}
 
 defaultTasks 'bower'
 
