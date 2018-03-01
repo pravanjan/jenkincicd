@@ -188,7 +188,7 @@ appengine {  // App Engine tasks configuration
     stopPreviousVersion = false  // default - stop the current version
     promote = false              // default - & make this the current version
     version = 'pr'
-	project = 'fullintegration-testing'
+	project = ''
   }
 }
 
