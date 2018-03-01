@@ -187,7 +187,7 @@ appengine {  // App Engine tasks configuration
   deploy {   // deploy configuration
     stopPreviousVersion = false  // default - stop the current version
     promote = false              // default - & make this the current version
-    version = 'pr'
+    version = 'pravanjan'
 	project = 'fullintegration-testing'
   }
 }
@@ -220,7 +220,6 @@ task node_setup(type: Exec) {
     tasks.npmBin.execute()
 
 }
-
 
 
 test.finalizedBy jacocoTestReport
