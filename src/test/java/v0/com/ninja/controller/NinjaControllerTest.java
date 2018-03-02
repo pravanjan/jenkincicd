@@ -44,7 +44,7 @@ public class NinjaControllerTest {
 	@Test
 	public void getSpeaker() throws Exception{
 
-		this.mockMvc.perform(get("/ninja/getSpeake/rajesh")).andExpect(status().is2xxSuccessful());
+		this.mockMvc.perform(get("/ninja/getSpeaker/rajesh")).andExpect(status().is2xxSuccessful());
 
 	}
 
