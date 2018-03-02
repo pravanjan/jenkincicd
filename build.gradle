@@ -177,7 +177,7 @@ classes.dependsOn enhanceJava8
 
 appengine {  // App Engine tasks configuration
   run {      // local (dev_appserver) configuration (standard environments only)
-    port = 9090              // default
+    port = 9099             // default
     jvmFlags = ['-Ddatastore.backing_store=../../src/main/webapp/WEB-INF/appengine-generated/local_db.bin', '-Dappengine.fullscan.seconds=5']
 
   }
