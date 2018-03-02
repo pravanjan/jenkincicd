@@ -193,34 +193,34 @@ appengine {  // App Engine tasks configuration
 }
 
 
-defaultTasks 'bower'
-
-// Get the path for the locally installed binaries
-task npmBin{
- doLast{
-    new ByteArrayOutputStream().withStream { os ->
-        def result = exec {
-            executable = 'npm'
-            args = ['bin']
-            standardOutput = os
-        }
-        ext.binPath = os.toString().trim() + "/"
-    }
-    }
-}
-
-
-// Install development packages from package.json
-task node_setup(type: Exec) {
-    description = "Grab NodeJS dependencies (from package.json)"
-    commandLine = ["npm", "install"]
-    inputs.file "package.json"
-    outputs.dir "node_modules"
-
-    tasks.npmBin.execute()
-
-}
-
+// defaultTasks 'bower'
+//
+// // Get the path for the locally installed binaries
+// task npmBin{
+//  doLast{
+//     new ByteArrayOutputStream().withStream { os ->
+//         def result = exec {
+//             executable = 'npm'
+//             args = ['bin']
+//             standardOutput = os
+//         }
+//         ext.binPath = os.toString().trim() + "/"
+//     }
+//     }
+// }
+//
+//
+// // Install development packages from package.json
+// task node_setup(type: Exec) {
+//     description = "Grab NodeJS dependencies (from package.json)"
+//     commandLine = ["npm", "install"]
+//     inputs.file "package.json"
+//     outputs.dir "node_modules"
+//
+//     tasks.npmBin.execute()
+//
+// }
+//
 
 
 test.finalizedBy jacocoTestReport

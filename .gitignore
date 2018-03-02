@@ -1,0 +1,12 @@
+/build
+/bin
+/.gradle
+/.gradle/2.13
+.classpath
+/.tmp/
+/node_modules
+/.nyc
+/coverage
+/.nyc_output
+/mochawesome-report
+/.nyc_output

@@ -31,7 +31,7 @@ public class NinjaControllerTest {
 	@Autowired
 	private WebApplicationContext wac;
 	private MockMvc mockMvc;
-	
+
 	@Before
 	public void setUp(){
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
@@ -42,10 +42,17 @@ public class NinjaControllerTest {
 		LocalUnitTestServer.tearDownConfiguration("datastore");
 	}
 	@Test
-	public void savewishTest() throws Exception{
-		this.mockMvc.perform(get("/ninja/getSpeaker/rajesh")).andExpect(status().is2xxSuccessful());
-	
+	public void getSpeaker() throws Exception{
+
+		this.mockMvc.perform(get("/ninja/getSpeake/rajesh")).andExpect(status().is2xxSuccessful());
+
 	}
-	
+
+	@Test
+    public void getSpeakerNegative() throws Exception{
+		System.out.println("getSpeakerNegative**** ");
+		this.mockMvc.perform(get("/getSpeaker/rajesh/")).andExpect(status().is2xxSuccessful());
+
+	}
 
 }
