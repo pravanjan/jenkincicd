@@ -47,12 +47,12 @@ public class NinjaControllerTest {
 		this.mockMvc.perform(get("/ninja/getSpeaker/rajesh")).andExpect(status().is2xxSuccessful());
 
 	}
-
-	@Test
-    public void getSpeakerNegative() throws Exception{
-		System.out.println("getSpeakerNegative**** ");
-		this.mockMvc.perform(get("/getSpeaker/rajesh/")).andExpect(status().is2xxSuccessful());
-
-	}
+	//
+	// @Test
+  //   public void getSpeakerNegative() throws Exception{
+	// 	System.out.println("getSpeakerNegative**** ");
+	// 	this.mockMvc.perform(get("/getSpeaker/rajesh/")).andExpect(status().is2xxSuccessful());
+	//
+	// }
 
 }
