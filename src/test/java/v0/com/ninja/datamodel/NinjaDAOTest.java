@@ -13,7 +13,7 @@ import v0.com.ninja.util.LocalUnitTestServer;
 import v0.com.ninja.util.PersistenceManagerUtil;
 
 public class NinjaDAOTest {
-	
+
     @BeforeClass
 	public static void setupTest(){
     	LocalUnitTestServer.setUpConfiguration("datastore");
@@ -22,16 +22,16 @@ public class NinjaDAOTest {
     	speaker.setName("pravanjan");
     	PersistenceManager pm = PersistenceManagerUtil.getPersistanceManager();
     	pm.makePersistent(speaker);
-    
-		
+
+
 	}
 
 	@Test
 	public void test() {
-		System.out.println("The requst of the call "+NinjaDAO.getSpeaker("pravanjan"));
+		System.out.println("The requst of the call *** "+NinjaDAO.getSpeaker("pravanjan"));
 		assertEquals("pravanjan",NinjaDAO.getSpeaker("pravanjan").getName());
 	}
-	
+
 	@AfterClass
     public static void runOnceAfterClass() {
     	LocalUnitTestServer.tearDownConfiguration("datastore");

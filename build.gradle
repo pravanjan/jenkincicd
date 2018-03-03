@@ -125,6 +125,8 @@ dependencies {
    jacocoTestReport {
       reports {
       html.enabled =true
+      xml.enabled =true
+      
       }
       afterEvaluate {
        classDirectories = files(classDirectories.files.collect{
@@ -177,7 +179,7 @@ classes.dependsOn enhanceJava8
 
 appengine {  // App Engine tasks configuration
   run {      // local (dev_appserver) configuration (standard environments only)
-    port = 9090              // default
+    port = 9099             // default
     jvmFlags = ['-Ddatastore.backing_store=../../src/main/webapp/WEB-INF/appengine-generated/local_db.bin', '-Dappengine.fullscan.seconds=5']
 
   }
@@ -187,40 +189,40 @@ appengine {  // App Engine tasks configuration
   deploy {   // deploy configuration
     stopPreviousVersion = false  // default - stop the current version
     promote = false              // default - & make this the current version
-    version = 'pr'
-	project = 'fullintegration-testing'
+    version = 'pravanjan'
+	project = 'jenkincicd'
   }
 }
 
 
-defaultTasks 'bower'
-
-// Get the path for the locally installed binaries
-task npmBin{
- doLast{
-    new ByteArrayOutputStream().withStream { os ->
-        def result = exec {
-            executable = 'npm'
-            args = ['bin']
-            standardOutput = os
-        }
-        ext.binPath = os.toString().trim() + "/"
-    }
-    }
-}
-
-
-// Install development packages from package.json
-task node_setup(type: Exec) {
-    description = "Grab NodeJS dependencies (from package.json)"
-    commandLine = ["npm", "install"]
-    inputs.file "package.json"
-    outputs.dir "node_modules"
-
-    tasks.npmBin.execute()
-
-}
-
+// defaultTasks 'bower'
+//
+// // Get the path for the locally installed binaries
+// task npmBin{
+//  doLast{
+//     new ByteArrayOutputStream().withStream { os ->
+//         def result = exec {
+//             executable = 'npm'
+//             args = ['bin']
+//             standardOutput = os
+//         }
+//         ext.binPath = os.toString().trim() + "/"
+//     }
+//     }
+// }
+//
+//
+// // Install development packages from package.json
+// task node_setup(type: Exec) {
+//     description = "Grab NodeJS dependencies (from package.json)"
+//     commandLine = ["npm", "install"]
+//     inputs.file "package.json"
+//     outputs.dir "node_modules"
+//
+//     tasks.npmBin.execute()
+//
+// }
+//
 
 
 test.finalizedBy jacocoTestReport
